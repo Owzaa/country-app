@@ -14,15 +14,15 @@ export default function CountryReducer(state:CountryReducerState=initState,actio
 // API fetch country data[] isLoading === true
 case FETCH_COUNTRIES:
     return{
-        ...state,
-        isLoading:true
+    ...state,
+    isLoading:true
 }
 
 // If fetching is Succesfull
 case FETCH_COUNTRIES_SUCCESS:
     return{
-        ...state,
-        isLoading:false,
+    ...state,
+    isLoading:false,
         countries:action.payload,
         error:'',
     }
