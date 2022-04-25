@@ -1,5 +1,5 @@
 import { FETCH_COUNTRIES,FETCH_COUNTRIES_SUCCESS,FETCH_COUNTRIES_FAILURE,FetchAllCountriesAction} from "../types"
-import { Dispatch  } from "@reduxjs/toolkit"
+import { Dispatch  } from "react-redux"
 
 
  // fetching all countries
