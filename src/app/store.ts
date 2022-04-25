@@ -4,7 +4,6 @@ import rootRedducer from '../features/Reducers';
 import thunk from 'redux-thunk'
 
 const initState={
-  testNmae:''
 }
 
 export const store  = configureStore({
