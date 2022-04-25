@@ -1,16 +1,20 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { configureStore,applyMiddleware, ThunkAction, Action, compose } from '@reduxjs/toolkit';
 import CountryReducer from '../features/Reducers/CountryReducer';
 import rootRedducer from '../features/Reducers';
+import thunk from 'redux-thunk'
 
 const initState={
   testNmae:''
 }
 
-export const store = configureStore({
-  reducer: {
+export const store  = configureStore({
+reducer: {
 countryReducer:CountryReducer
-  },
-});
+  }}
+)
+{ const middleware=[thunk]
+ let compooseEnhancers=compose 
+};
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
