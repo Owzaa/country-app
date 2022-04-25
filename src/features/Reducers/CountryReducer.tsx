@@ -7,7 +7,7 @@ const initiState:CountryReducerState={
     error:''
 }
 
-export default function CountryReducer(state:CountryReducerState=initiState,action:any){
+export default function CountryReducer(state=initiState,action:any){
 
     switch(action.type){
 

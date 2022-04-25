@@ -1,14 +1,14 @@
 import { FETCH_COUNTRIES,FETCH_COUNTRIES_SUCCESS,FETCH_COUNTRIES_FAILURE,FetchAllCountriesAction} from "../types"
+import { Dispatch  } from "@reduxjs/toolkit"
 
 
+ // fetching all countries
+export function fetchAllCountries():FetchAllCountriesAction{
 
-// fetching all countries
-export function fetchAllCountries():any{
-
-    return{
-        type:FETCH_COUNTRIES
-    }
-}
+        return{
+            type: FETCH_COUNTRIES
+        }
+} 
 
 // COUNTRIES Success
 export function fetchAllCountriesSuccess(countries:[]):any{
@@ -29,10 +29,10 @@ export function fetchAllCountriesFailure(error:string):any{
 }
 
 // Fetching All countries daTA
-
-export  default function fetchAllCountries(){
+/* 
+export function fetchAllCountries(){
         return(dispatch:Dispatch)=>{
-            dispatch(fetchAllCountriesLoading())
+            dispatch(fetchAllCountries())
             axios.get('https://restcountries.eu/rest/v2/al')
             .then((res)=>{
                 const countries= res.data 
@@ -42,3 +42,4 @@ export  default function fetchAllCountries(){
             })
         }
 }
+ */

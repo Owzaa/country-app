@@ -1,6 +1,5 @@
 import { configureStore,applyMiddleware, ThunkAction, Action, compose } from '@reduxjs/toolkit';
 import CountryReducer from '../features/Reducers/CountryReducer';
-import rootReducer from '../features/Reducers';
 import thunk from 'redux-thunk'
 
 const initState={
