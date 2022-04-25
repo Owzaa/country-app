@@ -20,7 +20,7 @@ React.useEffect(() => {
             </div>
             
             <div className='countryList-container'>
-            <ListCountries />
+            <ListCountries/>
             </div>
 
         </div>

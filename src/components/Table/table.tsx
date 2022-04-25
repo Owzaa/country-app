@@ -1,6 +1,20 @@
 import { css } from '@emotion/css'
 
-export const  ListCountries = () => {
+// dataProps
+type CountryListProps={
+        name: string
+        alphaCode: string
+        capital: string
+        region: string
+        callingCode: string
+        timezone:string
+        flag:string 
+       
+
+}
+
+
+const  ListCountries =({name,alphaCode,capital,callingCode,region,timezone,flag}:CountryListProps)=> {
   return (
     < >
       <h1 className={css`
@@ -59,13 +73,13 @@ export const  ListCountries = () => {
     `}>
 
     <tr>
-    <td>SOUTH AFRICA</td>
-    <td>ZA</td>
-    <td>Johannesburg</td>
-    <td>Africa</td>
-    <td>+27</td>
-    <td>GMT(+2)</td>
-    <td>SA FLAG</td>
+    <td>{name}</td>
+    <td>{alphaCode}</td>
+    <td>{capital}</td>
+    <td>{region}</td>
+    <td>{callingCode}</td>
+    <td>{timezone}</td>
+    <td><img src={flag} alt="country-flag" /></td>
 
     
     </tr>
