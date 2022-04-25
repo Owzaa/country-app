@@ -1,6 +1,6 @@
-import { CountryReducerState } from './CoumtryTypes'
+import { CountryReducerState } from './CountryTypes'
 
-export * from './CoumtryTypes'
+export * from './CountryTypes'
 
 export type AppState={
     countryReducer: CountryReducerState

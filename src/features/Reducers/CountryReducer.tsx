@@ -1,13 +1,13 @@
 import { CountryReducerState, FETCH_COUNTRIES,FETCH_COUNTRIES_SUCCESS,FETCH_COUNTRIES_FAILURE} from "../types"
 
 // initials state
-const initState:CountryReducerState={
+const initiState:CountryReducerState={
     countries:[],
     isLoading:false,
     error:''
 }
 
-export default function CountryReducer(state:CountryReducerState=initState,action:any){
+export default function CountryReducer(state:CountryReducerState=initiState,action:any){
 
     switch(action.type){
 
