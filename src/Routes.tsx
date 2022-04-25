@@ -1,18 +1,17 @@
 import React from 'react';
-import {Switch} from 'react-router'
-import {Route} from 'react-router-dom';
+import {Route,Routes} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Country from './pages/Country/Country'
 
 
-const Routes = () => (
+const  Routers= () => (
 
-    <Switch>
+    <Routes>
 
-<Route  path="/" element={Home} />
-<Route path="/Country/:name" element={Country} />
+<Route  path="/" element={<Home/>} />
+<Route path="/Country/:name" element={<Country/>} />
 
 
-    </Switch>
+    </Routes>
 )
-export default Routes
+export default Routers
