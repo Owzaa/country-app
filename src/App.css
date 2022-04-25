@@ -1,9 +1,13 @@
 *{
-  padding: 0px 13px;
+  margin: 0px 2px;
+  padding: 3px 5px;
 }
 .App {
-  text-align: center;
-  padding-left: 0 15px;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  text-align:center
 }
 
 .App-logo {

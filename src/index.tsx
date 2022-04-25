@@ -6,7 +6,9 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom'
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const container = ReactDOM.createRoot(document.getElementById('root'))
+const root = container;
+
 root.render(
     <Provider store={store}>
       <Router>

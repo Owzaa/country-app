@@ -14,22 +14,22 @@ function App() {
   return (
     <div className="App">
 
-    <div className='table-Container'>
-      <SearchForm/>
-    </div>
+      <div className='table-Container'>
+        <SearchForm />
+      </div>
 
-<section className='homeView-Container'>
+      <section className='homeView-Container'>
 
-<div className='container'>
-  <Home/>
-</div>
+        <div className='container'>
+          <Home />
+        </div>
 
-</section>
+      </section>
 
-   <section className='footer-container'>
-     <Footer/>
-   </section>
-   
+      <section className='footer-container'>
+        <Footer />
+      </section>
+
     </div>
   );
 }
