@@ -1,17 +1,18 @@
-import { FETCH_COUNTRIES,FETCH_COUNTRIES_SUCCESS,FETCH_COUNTRIES_FAILURE,FetchAllCountriesAction} from "../types"
-/* import { useDispatch  } from "redux" */
+import {Dispatch} from "redux"
+ import { FETCH_COUNTRIES_LOADING,FETCH_COUNTRIES_SUCCESS,FETCH_COUNTRIES_FAILURE, CountryAction} from "../types"
+
 
 
  // fetching all countries
-export function fetchAllCountries():FetchAllCountriesAction{
+export function FetchAllCountriesLoadingAction():any{
 
         return{
-            type: FETCH_COUNTRIES
+            type: FETCH_COUNTRIES_LOADING
         }
 } 
 
 // COUNTRIES Success
-export function fetchAllCountriesSuccess(countries:[]):any{
+export function fetchAllCountriesSuccess(countries:[]):CountryAction{
 
     return{
         type:FETCH_COUNTRIES_SUCCESS,
@@ -20,7 +21,7 @@ export function fetchAllCountriesSuccess(countries:[]):any{
 }
 
 // COUNTRIES Failure
-export function fetchAllCountriesFailure(error:string):any{
+export function fetchAllCountriesFailure(error:string):CountryAction{
 
     return{
         type:FETCH_COUNTRIES_FAILURE,
@@ -29,17 +30,17 @@ export function fetchAllCountriesFailure(error:string):any{
 }
 
 // Fetching All countries daTA
-/* 
-export function fetchAllCountries(){
+
+export function fetchAllLooadingCountries(){
         return(dispatch:Dispatch)=>{
-            dispatch(fetchAllCountries())
-            axios.get('https://restcountries.eu/rest/v2/al')
-            .then((res)=>{
+            dispatch(FetchAllCountriesLoadingAction())
+            .get('https://restcountries.eu/rest/v2/al')
+            .then((res: { data: any })=>{
                 const countries= res.data 
                 dispatch(fetchAllCountriesSuccess(countries))
-            }).catch((err)=>{
+            }).catch((err: string)=>{
                 dispatch(fetchAllCountriesFailure(err))
             })
         }
 }
- */
+ 

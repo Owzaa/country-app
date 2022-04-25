@@ -1,4 +1,4 @@
-import { CountryReducerState, FETCH_COUNTRIES,FETCH_COUNTRIES_SUCCESS,FETCH_COUNTRIES_FAILURE} from "../types"
+import { CountryReducerState, FETCH_COUNTRIES_LOADING,FETCH_COUNTRIES_SUCCESS,FETCH_COUNTRIES_FAILURE} from "../types"
 
 // initials state
 const initiState:CountryReducerState={
@@ -12,7 +12,7 @@ export default function CountryReducer(state=initiState,action:any){
     switch(action.type){
 
 // API fetch country data[] isLoading === true
-case FETCH_COUNTRIES:
+case FETCH_COUNTRIES_LOADING:
     return{
     ...state,
     isLoading:true

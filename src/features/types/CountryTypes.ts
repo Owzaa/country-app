@@ -1,4 +1,4 @@
-export const FETCH_COUNTRIES='FETCH_COUNTRIES'
+export const FETCH_COUNTRIES_LOADING='FETCH_COUNTRIES_LOADING'
 export const FETCH_COUNTRIES_SUCCESS ='FETCH_COUNTRIES_SUCCESS'
 export const FETCH_COUNTRIES_FAILURE ='FETCH_COUNTRIES_FAILURE'
 
@@ -10,8 +10,8 @@ export type CountryReducerState={
 }
 
 //  action types
-export  type FetchAllCountriesAction={
-type: typeof FETCH_COUNTRIES
+export  type FetchAllCountriesLoadingAction={
+type: typeof FETCH_COUNTRIES_LOADING
 payload?: string
 
 }
@@ -26,4 +26,4 @@ export type fetchAllCountriesFailure={
     payload:string
 }
 
-export type CountryAction= FetchAllCountriesAction | fetchAllCountriesSuccess | fetchAllCountriesFailure
+export type CountryAction= FetchAllCountriesLoadingAction | fetchAllCountriesSuccess | fetchAllCountriesFailure
