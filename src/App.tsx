@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import SearchForm from './components/SearchForm/searchForm';
+import Footer from './pages/Footer/Footer';
 
 
 function App() {
@@ -9,8 +10,12 @@ function App() {
       <SearchForm/>
 
 
-      
-       <div className='TextHeader'><h2 className='textContainer'> WORLDWIDE COUNTRY LIST</h2></div>
+
+   <section className='footer'>
+
+     <Footer/>
+   </section>
+   
     </div>
   );
 }
