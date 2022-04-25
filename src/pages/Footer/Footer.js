@@ -2,9 +2,9 @@ const Footer = () => (
     <footer style={styles.footerBar}>
       <div >
         <div style={styles.rowStyle}>
-          <p  xs={12} sm={12} md={12} lg={12}>
+          <span  xs={12} sm={12} md={12} lg={12}>
             <p style={styles.copyRight}>&copy; 2022 Olwethu Nyondo - All Rights Reserved</p>
-          </p>
+          </span>
         </div>
       </div>
     </footer>
