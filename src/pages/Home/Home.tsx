@@ -1,9 +1,18 @@
 import React from 'react'
+import ListCountries from '../../components/Table/table'
 
 const Home=()=>{
     return(
         <div>
-            HOME VIEW PAGE
+            <div className='searchBar-container'>
+
+
+            </div>
+            
+            <div className='countryList-container'>
+            <ListCountries />
+            </div>
+
         </div>
     )
 }
