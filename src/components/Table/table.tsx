@@ -1,17 +1,5 @@
 import { css } from '@emotion/css'
 
-
-/* 
- export const List = ({countries}) => {
- 
-  const GetAllCountries = countries.map((country) => (
-                <ul key={country.id}>
-                
-              {country.name}
-                                
-                </ul>
-  ))
-} */
 export const  ListCountries = () => {
   return (
     < >
