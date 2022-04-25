@@ -13,10 +13,10 @@ function App() {
 
   return (
     <div className="App">
-      <SearchForm/>
+
 
     <div className='table-Container'>
-
+      <SearchForm/>
       <ListCountries />
 
 
