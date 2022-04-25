@@ -19,10 +19,10 @@ export function fetchAllCountriesSuccess(countries:[]):any{
 }
 
 // COUNTRIES Failure
-export function fetchAllCountriesFailure(countries:[]):any{
+export function fetchAllCountriesFailure(error:string):any{
 
     return{
         type:FETCH_COUNTRIES_FAILURE,
-        payload:countries
+        payload:error
     }
 }
