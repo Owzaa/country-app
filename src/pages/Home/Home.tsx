@@ -1,8 +1,6 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
 import ListCountries from '../../components/Table/table'
-import { fetchAllCountries } from '../../features/Actions'
-import Country from '../Country/Country'
 
 const Home=()=>{
     //Initializing our Dispacth()
@@ -21,7 +19,7 @@ React.useEffect(() => {
             </div>
             
             <div className='countryList-container'>
-                <ListCountries {...fetchAllCountries}/>
+                <ListCountries {...ListCountries}countries />
             </div>
 
         </div>
@@ -29,6 +27,3 @@ React.useEffect(() => {
 }
 export default Home
 
-function FetchAllCountriesAction(): any {
-    throw new Error('Function not implemented.')
-}

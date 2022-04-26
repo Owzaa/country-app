@@ -21,25 +21,25 @@ type CountryListProps={
 }
 
 
-const  ListCountries =({name,alpha3Code,capital,callingCodes,region,timezones,flag}:CountryListProps)=> {
- 
- // GET: allCountries from Redux State
- const countries =useSelector((state:AppState) => state.countryReducer.countries)  
- const isLoading =useSelector((state:AppState) => state.countryReducer.isLoading)
- // initializing Dispatch
- const dispatch = useDispatch()
+const  ListCountries = ({countries:CountryListProps}) => {
 
- // Disptched CountriesData when page Loads
- React.useEffect(() =>{
-   dispatch(fetchAllCountries())
- },[dispatch])
- 
- 
- 
- 
- 
+  // GET: allCountries from Redux State
+  const countries = useSelector((state: AppState) => state.countryReducer.countries)
+  const isLoading = useSelector((state: AppState) => state.countryReducer.isLoading)
+  // initializing Dispatch
+  const dispatch = useDispatch()
+
+  // Disptched CountriesData when page Loads
+  React.useEffect(() => {
+    dispatch(fetchAllCountries())
+  }, [dispatch])
+
+
+
+
+
   return (
-    < >
+    <>
       <h1 className={css`
       justify-content:center;
       text-transform:uppercase;
@@ -48,7 +48,7 @@ const  ListCountries =({name,alpha3Code,capital,callingCodes,region,timezones,fl
       font-weight: 900;
       font-size:65px;
       `}> Worldwide Countries <strong>🌐</strong></h1>
-    <table className={css`
+      <table className={css`
                     color: black;
                     font-size: 18px;
                     display:center;
@@ -56,7 +56,7 @@ const  ListCountries =({name,alpha3Code,capital,callingCodes,region,timezones,fl
                     text-align: center;
                   
                     
-                    `} >   
+                    `}>
         <thead className={css`
                     color: DarkTurquoise;
                     font-size: 30px;
@@ -66,7 +66,7 @@ const  ListCountries =({name,alpha3Code,capital,callingCodes,region,timezones,fl
                     border-width:1px;
                     border-color:white;          
                      border-radius: 15px;
-                    `}> 
+                    `}>
           <tr className={css`
           justify-content:center;
                 border-width: 1px;
@@ -74,18 +74,18 @@ const  ListCountries =({name,alpha3Code,capital,callingCodes,region,timezones,fl
                
           
           `}>
-          <th  >Name </th> 
-          <th > Alpha3Code </th>
-          <th > Capital </th>
-          <th > Region </th>
-          <th > Call_Code </th>
-          <th > Timezones </th>
-          <th > Flag </th>
-          <th > Actions </th> 
-           </tr> 
-    </thead>
-{isLoading && <h2>Loading...</h2> }
-    <tbody className={css`
+            <th>Name </th>
+            <th> Alpha3Code </th>
+            <th> Capital </th>
+            <th> Region </th>
+            <th> Call_Code </th>
+            <th> Timezones </th>
+            <th> Flag </th>
+            <th> Actions </th>
+          </tr>
+        </thead>
+        {isLoading && <h2>Loading...</h2>}
+        <tbody className={css`
     color: Snow;
     font-size: 15px;
     display:flexbox;
@@ -95,34 +95,16 @@ const  ListCountries =({name,alpha3Code,capital,callingCodes,region,timezones,fl
     border-radius: 35px;
     `}>
 
- <tr> 
+          <tr>
 
-{!isLoading && countries &&
+           
 
- 
+          </tr>
+        </tbody>
+      </table>
 
-  
-  countries.map(country => (
-    <ul {...Country}>
-    <td>{name}</td>
-    <td>{alpha3Code}</td>
-    <td>{capital}</td>
-    <td>{region}</td>
-    <td>{callingCodes}</td>
-    <td>{timezones}</td>
-    <td><img src={flag} alt={name} /></td>
-</ul>
-     )) 
-
-
-  }   
-  
-  </tr>  
-    </tbody>
-    </table>
-    
     </>
-  );
+  )
 }
 
 export default ListCountries;
