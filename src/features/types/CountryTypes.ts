@@ -10,7 +10,7 @@ export type CountryReducerState={
 }
 
 //  action types
-export  type FetchAllCountriesLoadingAction={
+export  type FetchAllCountriesAction={
 type: typeof FETCH_COUNTRIES_LOADING
 payload?: string
 
@@ -26,4 +26,4 @@ export type fetchAllCountriesFailure={
     payload:string
 }
 
-export type CountryAction= FetchAllCountriesLoadingAction | fetchAllCountriesSuccess | fetchAllCountriesFailure
+export type CountryAction= FetchAllCountriesAction | fetchAllCountriesSuccess | fetchAllCountriesFailure

@@ -1,20 +1,43 @@
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import {AppState} from '../../features/types'
+import { fetchAllLooadingCountries } from '../../features/Actions'
 import { css } from '@emotion/css'
+import Country from '../../pages/Country/Country'
+
 
 // dataProps
 type CountryListProps={
         name: string
-        alphaCode: string
+        alpha3Code: string
         capital: string
         region: string
-        callingCode: string
-        timezone:string
+        callingCodes: string
+        timezones:string
         flag:string 
+        country: object
        
 
 }
 
 
-const  ListCountries =({name,alphaCode,capital,callingCode,region,timezone,flag}:CountryListProps)=> {
+const  ListCountries =({name,alpha3Code,capital,callingCodes,region,timezones,flag}:CountryListProps)=> {
+ 
+ // GET: allCountries from Redux State
+ const countries =useSelector((state:AppState) => state.countryReducer.countries)  
+ const isLoading =useSelector((state:AppState) => state.countryReducer.isLoading)
+ // initializing Dispatch
+ const dispatch = useDispatch()
+
+ // Disptched CountriesData when page Loads
+ React.useEffect(() =>{
+   dispatch(fetchAllLooadingCountries())
+ },[dispatch])
+ 
+ 
+ 
+ 
+ 
   return (
     < >
       <h1 className={css`
@@ -61,7 +84,7 @@ const  ListCountries =({name,alphaCode,capital,callingCode,region,timezone,flag}
           <th > Actions </th> 
            </tr> 
     </thead>
-
+{isLoading && <h2>Loading...</h2> }
     <tbody className={css`
     color: Snow;
     font-size: 15px;
@@ -72,18 +95,29 @@ const  ListCountries =({name,alphaCode,capital,callingCode,region,timezone,flag}
     border-radius: 35px;
     `}>
 
-    <tr>
+ <tr> 
+
+{!isLoading && countries &&
+
+ 
+
+  
+  countries.map(_country => (
+    <ul {...Country}>
     <td>{name}</td>
-    <td>{alphaCode}</td>
+    <td>{alpha3Code}</td>
     <td>{capital}</td>
     <td>{region}</td>
-    <td>{callingCode}</td>
-    <td>{timezone}</td>
-    <td><img src={flag} alt="country-flag" /></td>
+    <td>{callingCodes}</td>
+    <td>{timezones}</td>
+    <td><img src={flag} alt={name} /></td>
+</ul>
+     )) 
 
-    
-    </tr>
-    
+
+  }   
+  
+  </tr>  
     </tbody>
     </table>
     

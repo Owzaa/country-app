@@ -1,11 +1,15 @@
 import { configureStore,ThunkAction, Action } from '@reduxjs/toolkit';
 import CountryReducer from '../features/Reducers/CountryReducer';
 
-
+const initState={}
 export const store  = configureStore({
-reducer: {
-countryReducer:CountryReducer
-  }}
+reducer: {  
+country:CountryReducer
+  },
+
+
+
+}
 )
 ;
 
