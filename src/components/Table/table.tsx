@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {AppState} from '../../features/types'
-import { fetchAllLooadingCountries } from '../../features/Actions'
+import { fetchAllCountries} from '../../features/Actions'
 import { css } from '@emotion/css'
 import Country from '../../pages/Country/Country'
 
@@ -31,7 +31,7 @@ const  ListCountries =({name,alpha3Code,capital,callingCodes,region,timezones,fl
 
  // Disptched CountriesData when page Loads
  React.useEffect(() =>{
-   dispatch(fetchAllLooadingCountries())
+   dispatch(fetchAllCountries())
  },[dispatch])
  
  

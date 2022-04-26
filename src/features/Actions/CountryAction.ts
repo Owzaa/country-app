@@ -1,46 +1,54 @@
-import {Dispatch} from "redux"
- import { FETCH_COUNTRIES_LOADING,FETCH_COUNTRIES_SUCCESS,FETCH_COUNTRIES_FAILURE, CountryAction} from "../types"
+import {Dispatch} from 'redux'
+import axios from 'axios'
 
+import {FETCH_COUNTRIES_SUCCESS, CountryAction, FETCH_COUNTRIES_FAILURE, FETCH_COUNTRIES_LOADING} from '../types'
 
+//fetch all countries
+export function fetchAllCountriesLoading():CountryAction{
 
- // fetching all countries
-export function FetchAllCountriesLoadingAction():any{
+    return {
+        type:FETCH_COUNTRIES_LOADING
+    }
 
-        return{
-            type: FETCH_COUNTRIES_LOADING
-        }
-} 
+}
 
-// COUNTRIES Success
+// fetch all countries success
 export function fetchAllCountriesSuccess(countries:[]):CountryAction{
-
-    return{
+    return {
         type:FETCH_COUNTRIES_SUCCESS,
         payload:countries
     }
+
 }
 
-// COUNTRIES Failure
+// fetch all countries failure
 export function fetchAllCountriesFailure(error:string):CountryAction{
-
-    return{
+    return {
         type:FETCH_COUNTRIES_FAILURE,
         payload:error
+        
     }
 }
 
-// Fetching All countries daTA
+// fetch countries data
 
-export function fetchAllLooadingCountries(){
-        return(dispatch:Dispatch)=>{
-            dispatch(FetchAllCountriesLoadingAction())
-            .get('https://restcountries.eu/rest/v2/al')
-            .then((res: { data: any })=>{
-                const countries= res.data 
-                dispatch(fetchAllCountriesSuccess(countries))
-            }).catch((err: string)=>{
-                dispatch(fetchAllCountriesFailure(err))
-            })
-        }
+export function fetchAllCountries(){
+
+    return (dispatch:Dispatch)=>{
+
+       
+
+        dispatch(fetchAllCountriesLoading())
+        //axios call
+        axios.get('https://restcountries.com/v2/all')
+        .then((res)=>{
+            const countries=res.data 
+            dispatch(fetchAllCountriesSuccess(countries))
+        }).catch((err)=>{
+            dispatch(fetchAllCountriesFailure(err))
+
+        })
+    }
+
+    
 }
- 
