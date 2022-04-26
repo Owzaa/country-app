@@ -1,6 +1,5 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import ListCountries from '../../components/Table/table'
 
 const Home=()=>{
     //Initializing our Dispacth()
@@ -19,11 +18,15 @@ React.useEffect(() => {
             </div>
             
             <div className='countryList-container'>
-                <ListCountries {...ListCountries}countries />
+                <ListCountries />
             </div>
 
         </div>
     )
 }
 export default Home
+
+function FetchAllCountriesAction(): any {
+    throw new Error('Function not implemented.')
+}
 

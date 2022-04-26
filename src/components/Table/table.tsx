@@ -21,7 +21,7 @@ type CountryListProps={
 }
 
 
-const  ListCountries = ({countries:CountryListProps}) => {
+const  ListCountries = ({CountryListProps}) => {
 
   // GET: allCountries from Redux State
   const countries = useSelector((state: AppState) => state.countryReducer.countries)
