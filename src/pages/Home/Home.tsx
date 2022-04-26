@@ -21,7 +21,6 @@ React.useEffect(() => {
             </div>
             
             <div className='countryList-container'>
-                <ListCountries name={''} alpha3Code={''} capital={''} region={''} callingCodes={''} timezones={''} flag={''} {...Country}/>
             </div>
 
         </div>

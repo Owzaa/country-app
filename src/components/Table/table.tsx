@@ -102,7 +102,7 @@ const  ListCountries =({name,alpha3Code,capital,callingCodes,region,timezones,fl
  
 
   
-  countries.map(_country => (
+  countries.map(country => (
     <ul {...Country}>
     <td>{name}</td>
     <td>{alpha3Code}</td>

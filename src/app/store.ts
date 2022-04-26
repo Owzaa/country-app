@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { configureStore,ThunkAction, Action } from '@reduxjs/toolkit';
 import CountryReducer from '../features/Reducers/CountryReducer';
 
