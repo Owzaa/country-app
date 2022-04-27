@@ -1,7 +1,9 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
+import ListCountries from '../../components/Table/table'
 
 const Home=()=>{
+    const [countries,setCopuntries] = React.useState([])
     //Initializing our Dispacth()
     const dispatch = useDispatch() 
 
@@ -18,8 +20,7 @@ React.useEffect(() => {
             </div>
             
             <div className='countryList-container'>
-                <ListCountries />
-            </div>
+                <ListCountries countries={countries} />            </div>
 
         </div>
     )

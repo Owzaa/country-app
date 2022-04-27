@@ -6,22 +6,9 @@ import { css } from '@emotion/css'
 import Country from '../../pages/Country/Country'
 
 
-// dataProps
-type CountryListProps={
-        name: string
-        alpha3Code: string
-        capital: string
-        region: string
-        callingCodes: string
-        timezones:string
-        flag:string 
-        country: object
-       
-
-}
 
 
-const  ListCountries = ({CountryListProps}) => {
+const  ListCountries = ({countries}) => {
 
   // GET: allCountries from Redux State
   const countries = useSelector((state: AppState) => state.countryReducer.countries)
@@ -84,7 +71,7 @@ const  ListCountries = ({CountryListProps}) => {
             <th> Actions </th>
           </tr>
         </thead>
-        {isLoading && <h2>Loading...</h2>}
+    
         <tbody className={css`
     color: Snow;
     font-size: 15px;
@@ -94,7 +81,7 @@ const  ListCountries = ({CountryListProps}) => {
     font-weight: 700;
     border-radius: 35px;
     `}>
-
+    {isLoading && <h2>Loading...</h2>}
           <tr>
 
            
