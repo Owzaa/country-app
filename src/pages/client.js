@@ -1,6 +1,6 @@
 import React from 'react'
 import { hydrate } from 'react-dom'
-import { createStore } from 'redux'
+import { store } from './app/store';
 import { Provider } from 'react-redux'
 import App from './containers/App'
 import counterApp from './reducers'
