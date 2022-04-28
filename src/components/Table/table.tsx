@@ -1,7 +1,7 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import {AppState} from '../../features/types'
-import { fetchAllCountries} from '../../features/Actions'
+import { useDispatch} from 'react-redux'
+/* import {AppState} from '../../features/types'
+ */import { fetchAllCountries} from '../../features/Actions'
 import { css } from '@emotion/css'
 
 
@@ -12,8 +12,8 @@ import { css } from '@emotion/css'
 function ListCountries () {
 
 // GET: allCountries from Redux State
-  const countries = useSelector((state: AppState) => state.countryReducer.countries)
-  const isLoading = useSelector((state: AppState) => state.countryReducer.isLoading)
+ /*  const countries = useSelector((state: AppState) => state.countryReducer.countries)
+  const isLoading = useSelector((state: AppState) => state.countryReducer.isLoading) */
   // initializing Dispatch
   const dispatch = useDispatch()
 
@@ -79,7 +79,6 @@ function ListCountries () {
     font-weight: 700;
     border-radius: 35px;
     `}>
-    {isLoading && <h2>Loading...</h2>}
           <tr>
 
            
