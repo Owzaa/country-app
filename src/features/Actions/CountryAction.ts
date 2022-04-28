@@ -40,7 +40,8 @@ export function fetchAllCountries(){
 
         dispatch(fetchAllCountriesLoading())
         //axios call
-        axios.get('https://restcountries.com/v2/all')
+        axios
+        .get("https://restcountries.com/v2/all/")
         .then((res)=>{
             const countries=res.data 
             dispatch(fetchAllCountriesSuccess(countries))
