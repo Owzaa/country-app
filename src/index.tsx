@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { hydrate } from 'react-dom'
@@ -25,7 +24,4 @@ import {BrowserRouter as Router} from 'react-router-dom'
 serviceWorker.unregister();
 
 
-function createRoot(container: Element | null) {
-  throw new Error('Function not implemented.');
-}
 
