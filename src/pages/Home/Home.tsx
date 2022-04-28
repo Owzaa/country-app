@@ -29,3 +29,7 @@ usefetch(() => {
 }
 export default Home;
 
+function usefetch(arg0: () => React.Dispatch<React.SetStateAction<never[]>>, arg1: import("redux").Dispatch<any>[]) {
+    throw new Error('Function not implemented.')
+}
+

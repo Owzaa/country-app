@@ -3,12 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import {AppState} from '../../features/types'
 import { fetchAllCountries} from '../../features/Actions'
 import { css } from '@emotion/css'
-import Country from '../../pages/Country/Country'
+import {countries
 
 
 
-
-const  ListCountries = ({countries}) => {
+const  ListCountries = ({fetchCountries}) => {
 
   // GET: allCountries from Redux State
   const countries = useSelector((state: AppState) => state.countryReducer.countries)
