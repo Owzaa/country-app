@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import {AppState} from '../../features/types'
 import { fetchAllCountries} from '../../features/Actions'
 import { css } from '@emotion/css'
-import {countries
 
 
 
-const  ListCountries = ({fetchCountries}) => {
+  
 
-  // GET: allCountries from Redux State
+
+function ListCountries () {
+
+// GET: allCountries from Redux State
   const countries = useSelector((state: AppState) => state.countryReducer.countries)
   const isLoading = useSelector((state: AppState) => state.countryReducer.isLoading)
   // initializing Dispatch
@@ -19,9 +21,6 @@ const  ListCountries = ({fetchCountries}) => {
   React.useEffect(() => {
     dispatch(fetchAllCountries())
   }, [dispatch])
-
-
-
 
 
   return (

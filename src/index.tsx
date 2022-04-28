@@ -1,22 +1,31 @@
-import ReactDOM, { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { hydrate } from 'react-dom'
+
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom'
 
-const container = ReactDOM.createRoot(document.getElementById('root'));
-const root = container
-root.render(
+
+
+
+ hydrate(
     <Provider store={store}>
       <Router>
       <App />
       </Router>
-    </Provider>
+    </Provider>,  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+function createRoot(container: Element | null) {
+  throw new Error('Function not implemented.');
+}
+

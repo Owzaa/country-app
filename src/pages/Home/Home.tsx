@@ -22,7 +22,7 @@ usefetch(() => {
             </div>
             
             <div className='countryList-container'>
-                <ListCountries countries={countries} />            </div>
+                <ListCountries {...countries.entries} />            </div>
 
         </div>
     )
