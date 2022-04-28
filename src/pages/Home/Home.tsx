@@ -3,14 +3,16 @@ import {useDispatch} from 'react-redux'
 import ListCountries from '../../components/Table/table'
 
 const Home=()=>{
-    const [countries,setCopuntries] = React.useState([])
+    const [countries,setCountries] = React.useState([])
     //Initializing our Dispacth()
-    const dispatch = useDispatch() 
+    const Dispatch = useDispatch() 
 
 //dispatch our  fetchAllCountry Data
-React.useEffect(() => {
-    dispatch(FetchAllCountriesAction())
-},[dispatch])
+usefetch(() => {
+    Dispatch("https://restcountries.com/v2/all/")
+    return setCountries;
+  
+},[Dispatch])
 
     return(
         <div>
@@ -25,9 +27,5 @@ React.useEffect(() => {
         </div>
     )
 }
-export default Home
-
-function FetchAllCountriesAction(): any {
-    throw new Error('Function not implemented.')
-}
+export default Home;
 
