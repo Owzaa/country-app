@@ -3,10 +3,9 @@ import { hydrate } from 'react-dom'
 import { store } from './app/store';
 import { Provider } from 'react-redux'
 import App from './containers/App'
-import counterApp from './reducers'
-
+import CountryReducer from '../features/Reducers/CountryReducer';
 // Create Redux store with state injected by the server
-const store = createStore(counterApp, window.__PRELOADED_STATE__)
+store = store (CountryReducer, window.__PRELOADED_STATE__)
 
 // Allow the passed state to be garbage-collected
 delete window.__PRELOADED_STATE__
